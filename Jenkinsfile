@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Build Stage'){
             steps{
-                sh 'docker build -t ttsvetkoff/flask ./ -f ./Dockerfile'
+                sh 'sudo docker build -t ttsvetkoff/flask ./ -f ./Dockerfile'
             }
     }
 }
