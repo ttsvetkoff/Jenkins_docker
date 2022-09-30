@@ -9,9 +9,9 @@ pipeline{
     }
         stage('Build Stage'){
             steps{
-                //sh 'sudo docker stop flask-app'
-                //sh 'sudo docker rm flask-app'
-                //sh 'sudo docker rmi -f flask'
+                sh 'sudo docker stop flask-app'
+                sh 'sudo docker rm flask-app'
+                sh 'sudo docker rmi -f flask'
                 sh 'sudo docker build -t ttsvetkoff/flask ./ -f ./Dockerfile'
             }
     }
