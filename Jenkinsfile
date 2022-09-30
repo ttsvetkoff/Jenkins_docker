@@ -1,11 +1,17 @@
 pipeline{
     agent any
     stages{
+        stage('Connect Stage'){
+            steps{
+                sh 'ssh ubuntu@13.42.51.83'
+
+            }
+    }
         stage('Build Stage'){
             steps{
-                sh 'sudo docker stop flask-app'
-                sh 'sudo docker rm flask-app'
-                sh 'sudo docker rmi -f flask'
+                //sh 'sudo docker stop flask-app'
+                //sh 'sudo docker rm flask-app'
+                //sh 'sudo docker rmi -f flask'
                 sh 'sudo docker build -t ttsvetkoff/flask ./ -f ./Dockerfile'
             }
     }
